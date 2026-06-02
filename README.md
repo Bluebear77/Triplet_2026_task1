@@ -302,6 +302,3 @@ outputs/test/task1_fused/alpha1.0/submission.zip
 - `BAAI/bge-reranker-base` should be run with `--use_reranker`.
 - The final submission archive should contain `predictions.csv`.
 
-## License
-
-Please add the license information for this repository.
