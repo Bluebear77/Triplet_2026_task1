@@ -302,3 +302,27 @@ outputs/test/task1_fused/alpha1.0/submission.zip
 - `BAAI/bge-reranker-base` should be run with `--use_reranker`.
 - The final submission archive should contain `predictions.csv`.
 
+
+## Command to reproduce:
+
+```
+conda activate triplet-task1
+
+which python
+python --version
+
+python -m pip install --upgrade pip
+
+python -m pip install torch==2.6.0+cu124 torchvision==0.21.0+cu124 torchaudio==2.6.0+cu124 \
+  --index-url https://download.pytorch.org/whl/cu124
+
+grep -vE '^(torch|torchvision|torchaudio)==' requirements.txt > requirements_no_torch.txt
+python -m pip install -r requirements_no_torch.txt
+
+python -c "import torch; print(torch.__version__); print(torch.cuda.is_available())"
+
+ls data/train
+ls data/test
+
+bash run.sh
+```
