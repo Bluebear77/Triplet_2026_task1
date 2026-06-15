@@ -39,7 +39,11 @@ def load_pairs_csv(path: str) -> List[Tuple[str, str, int]]:
         for row in reader:
             text_id = row[idx["text_id"]]
             table_id = row[idx["table_id"]]
-            if "label" not in idx:
+           # if "label" not in idx:
+           #     label = None
+           #  else:
+           #     label = int(row[idx["label"]])
+            if "label" not in idx or row[idx["label"]].strip() == "":
                 label = None
             else:
                 label = int(row[idx["label"]])

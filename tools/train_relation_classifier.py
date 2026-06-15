@@ -41,6 +41,7 @@ def main():
     ap.add_argument("--use_instuctions", action="store_true", help="whether to use instructions in the input")
     ap.add_argument("--use_class_weight", action="store_true")
     ap.add_argument("--save_valid_predictions", default="")
+    ap.add_argument("--resume_from_checkpoint", default="", help="Path to Trainer checkpoint to resume from")
     args = ap.parse_args()
 
 
@@ -70,7 +71,7 @@ def main():
         ignore_mismatched_sizes=True,
     )
 
-    instruction = "Task: Determine whether the text is relevant to the table." if not args.use_reranker else None
+    instruction = "Task: Determine whether the text is relevant to the table." if args.use_instuctions else ""
 
     train_dataset = RelationDataset(train_rows, tokenizer, instruction=instruction, use_float_labels=args.use_reranker, max_length=args.max_length)
     valid_dataset = RelationDataset(valid_rows, tokenizer, instruction=instruction, use_float_labels=args.use_reranker, max_length=args.max_length)
@@ -89,6 +90,7 @@ def main():
         load_best_model_at_end=True,
         fp16=args.fp16,
         report_to="none",
+        save_total_limit=2,
     )
 
     if not args.use_class_weight:
@@ -122,7 +124,7 @@ def main():
             class_weights=class_weights,
         )
 
-    trainer.train()
+    trainer.train(resume_from_checkpoint=args.resume_from_checkpoint or None)
 
     metrics = trainer.evaluate()
     print("=== Validation metrics ===")

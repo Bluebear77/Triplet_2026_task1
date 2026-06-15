@@ -306,12 +306,19 @@ outputs/test/task1_fused/alpha1.0/submission.zip
 ## Command to reproduce:
 
 ```
-conda activate triplet-task1
+#In circa01
+cd  /home/wei/Triplet_2026_task1
+
+conda create -p /home/wei/Triplet_2026_task1/.conda_env python=3.11 -y
+conda activate /home/wei/Triplet_2026_task1/.conda_env
 
 which python
 python --version
 
+conda install -c conda-forge zip -y
+
 python -m pip install --upgrade pip
+
 
 python -m pip install torch==2.6.0+cu124 torchvision==0.21.0+cu124 torchaudio==2.6.0+cu124 \
   --index-url https://download.pytorch.org/whl/cu124
@@ -324,5 +331,6 @@ python -c "import torch; print(torch.__version__); print(torch.cuda.is_available
 ls data/train
 ls data/test
 
-bash run.sh
+export CUDA_VISIBLE_DEVICES=2
+bash run.sh 2>&1 | tee record.txt
 ```
