@@ -1,0 +1,9 @@
+{
+  "data_jsonl_path": "data/test/rel_data_text.jsonl",
+  "model_name": "roberta-base",
+  "model_dir": "outputs/train/task1_roberta-base_text_inst/relation_cls/checkpoint-3940",
+  "use_instuctions": true,
+  "max_length": 512,
+  "batch_size": 128,
+  "save_scores_jsonl": "outputs/test/task1_roberta-base_text_inst/predicted_scores.jsonl"
+}
