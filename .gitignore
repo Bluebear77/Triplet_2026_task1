@@ -1,0 +1,19 @@
+# environment
+.conda_env/
+
+# datasets (usually huge)
+data/
+
+# training outputs
+outputs/train/
+
+# python cache
+__pycache__/
+*.pyc
+
+# misc logs
+git.txt
+
+
+# system junk
+*.log
