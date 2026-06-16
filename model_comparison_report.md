@@ -1,7 +1,10 @@
 
 # TRIPLET Challenge Subtask 1 - Model Comparison Report
 
-**Generated on:** mar. 16 juin 2026 15:07:59 CEST
+For [../tools/train_relation_classifier.py](https://github.com/DensoITLab/tripletChallenge2026_task1/blob/main/tools/train_relation_classifier.py), a small bug (instruction should be controlled by `use_instuctions` NOT by `use_reranker`)is fixed by aligning instruction-style serialization with the design in Section 3.3, changing <br/>
+`instruction = "Task: Determine whether the text is relevant to the table." if not args.use_reranker else None`
+ to<br/>
+ `instruction = "Task: Determine whether the text is relevant to the table." if args.use_instuctions else ""`.
 
 ## Models Ranked by F1 Score
 
