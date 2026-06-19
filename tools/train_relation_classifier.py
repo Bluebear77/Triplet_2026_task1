@@ -70,7 +70,9 @@ def main():
         ignore_mismatched_sizes=True,
     )
 
-    instruction = "Task: Determine whether the text is relevant to the table." if not args.use_reranker else None
+    # instruction = "Task: Determine whether the text is relevant to the table." if not args.use_reranker else None
+    # (instruction should be controlled by use_instuctions NOT by use_reranker)is fixed by aligning instruction-style serialization with the design in Section 3.3
+    instruction = "Task: Determine whether the text is relevant to the table." if args.use_instuctions else ""
 
     train_dataset = RelationDataset(train_rows, tokenizer, instruction=instruction, use_float_labels=args.use_reranker, max_length=args.max_length)
     valid_dataset = RelationDataset(valid_rows, tokenizer, instruction=instruction, use_float_labels=args.use_reranker, max_length=args.max_length)
