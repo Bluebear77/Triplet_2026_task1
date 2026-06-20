@@ -8,6 +8,8 @@ For [../tools/train_relation_classifier.py](https://github.com/DensoITLab/triple
 
 ## TRIPLET Challenge Combined Leaderboard (Official + Reproduced Results)
 
+Only row 3 is the result of Leaderboard top 1 by YoTachioka. All other rows are reproduced result based on [YoTachioka's github repo](https://github.com/DensoITLab/tripletChallenge2026_task1).
+
 | Rank | Model / Participant | Submission ID | F1 Score | Precision | Recall | Accuracy |
 |------|---------------------|---------------|----------|-----------|--------|----------|
 | 1 | task1_fused_large_text__base_keyValue/alpha1.0 | — | **72.9** | 71.8 | 74.1 | **92.2** |
@@ -21,7 +23,6 @@ For [../tools/train_relation_classifier.py](https://github.com/DensoITLab/triple
 | 9 | task1_roberta-base_structured | — | 69.5 | 59.1 | **84.3** | 89.5 |
 | 10 | task1_roberta-base_keyValue | — | 69.2 | 59.3 | 83.2 | 89.5 |
 
-> **Note:** Official results were originally reported on a 0–1 scale and converted to percentage for consistency.
 
 ## Summary
 
