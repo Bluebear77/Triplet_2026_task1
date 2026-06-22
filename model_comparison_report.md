@@ -14,7 +14,7 @@ Only row 3 is the result of Leaderboard top 1 by YoTachioka. All other rows are 
 |------|---------------------|---------------|----------|-----------|--------|----------|
 | 1 | task1_fused_large_text__base_keyValue/alpha1.0 | — | **72.9** | 71.8 | 74.1 | **92.2** |
 | 2 | task1_fused_large_text__base_text/alpha1.0 | — | 72.8 | 71.7 | 74.0 | 92.1 |
-| 3 | **ytachioka (OFFICIAL SUBMISSION)** | **668767** | **72.0** | **74.0** | **69.0** | — |
+| 3 | **ytachioka (OFFICIAL SUBMISSION)** | **668767** | **72.0** | **74.0** | **69.0** | **92.2** |
 | 4 | task1_roberta-large_text | — | 71.8 | **73.4** | 70.3 | 92.1 |
 | 5 | task1_BAAI-bge-reranker-base_text | — | 70.4 | 66.8 | 74.4 | 91.1 |
 | 6 | task1_roberta-base_text | — | 70.2 | 61.1 | 82.5 | 90.0 |
